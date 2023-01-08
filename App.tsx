@@ -8,16 +8,33 @@
  * @format
  */
 
-import React, {type PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import Router from './router';
+
+const App = () => {
+  // const isDarkMode = useColorScheme() === 'dark';
+
+  return (
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
+  );
+};
+
+export default App;
+
+// import {
+//   SafeAreaView,
+//   ScrollView,
+//   StatusBar,
+//   StyleSheet,
+//   Text,
+//   useColorScheme,
+//   View,
+// } from 'react-native';
+
+// import {globalStyles} from './src/styles/global';
 
 // const Section: React.FC<
 //   PropsWithChildren<{
@@ -52,36 +69,3 @@ import {
 // const getFonts = () => {
 
 // }
-
-const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return (
-    <SafeAreaView>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        // backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        // style={backgroundStyle}
-      >
-        <View style={styles.container}>
-          <Text style={styles.font}>D2Coding? isit? Naver</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    fontFamily: 'D2CodingBold',
-  },
-  font: {
-    fontFamily: 'D2Coding',
-  },
-});
-
-export default App;
