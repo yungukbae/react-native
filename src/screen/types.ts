@@ -2,8 +2,9 @@ import {type NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
   Home: {number: number} | undefined;
-  About: {userId: string} | undefined;
+  BasicComp: undefined;
   Profile: undefined;
+  UserInterface: undefined;
 };
 
 export type GenNavigationProps<RouteName extends keyof RootStackParamList> =

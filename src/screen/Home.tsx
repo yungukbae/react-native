@@ -10,7 +10,14 @@ const Home = ({route, navigation}: GenNavigationProps<'Home'>) => {
   return (
     <CustomView>
       <Text>Home</Text>
-      <Button title="Go About" onPress={() => navigation.navigate('About')} />
+      <Button
+        title="Go BasicComp"
+        onPress={() => navigation.navigate('BasicComp')}
+      />
+      <Button
+        title="Go UserInterface"
+        onPress={() => navigation.navigate('UserInterface')}
+      />
       <Button
         title="Go Profile"
         onPress={() => navigation.navigate('Profile')}

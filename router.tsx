@@ -1,9 +1,25 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/screen/Home';
-import About from './src/screen/About';
-import {RootStackParamList} from './src/screen/types';
+import BasicComp from './src/screen/BasicComp';
 import Profile from './src/screen/Profile';
+import {RootStackParamList} from './src/screen/types';
+import UserInterface from './src/screen/UserInterface';
+
+const RootStack = createStackNavigator<RootStackParamList>();
+
+const Router = () => {
+  return (
+    <RootStack.Navigator initialRouteName="Home">
+      <RootStack.Screen name="Home" component={Home} />
+      <RootStack.Screen name="BasicComp" component={BasicComp} />
+      <RootStack.Screen name="Profile" component={Profile} />
+      <RootStack.Screen name="UserInterface" component={UserInterface} />
+    </RootStack.Navigator>
+  );
+};
+
+export default Router;
 
 /**
  * navigtor Param 정의
@@ -31,16 +47,3 @@ import Profile from './src/screen/Profile';
  * After we have defined the mappings, we need to tell our navigator to use it.
  * To do that, we can pass it as a generic to the createXNavigator functions:
  */
-const RootStack = createStackNavigator<RootStackParamList>();
-
-const Router = () => {
-  return (
-    <RootStack.Navigator initialRouteName="Home">
-      <RootStack.Screen name="Home" component={Home} />
-      <RootStack.Screen name="About" component={About} />
-      <RootStack.Screen name="Profile" component={Profile} />
-    </RootStack.Navigator>
-  );
-};
-
-export default Router;
