@@ -1,20 +1,19 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/screen/Home';
-import BasicComp from './src/screen/BasicComp';
-import Profile from './src/screen/Profile';
 import {RootStackParamList} from './src/screen/types';
-import UserInterface from './src/screen/UserInterface';
+import Login from './src/screen/Login/Login';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
 const Router = () => {
+  const initRoute = 'Login';
   return (
-    <RootStack.Navigator initialRouteName="Home">
+    <RootStack.Navigator
+      initialRouteName={initRoute}
+      screenOptions={{headerShown: false}}>
+      <RootStack.Screen name="Login" component={Login} />
       <RootStack.Screen name="Home" component={Home} />
-      <RootStack.Screen name="BasicComp" component={BasicComp} />
-      <RootStack.Screen name="Profile" component={Profile} />
-      <RootStack.Screen name="UserInterface" component={UserInterface} />
     </RootStack.Navigator>
   );
 };
